@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Test</title>
+    <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet"></head>
+<body>
+    <header>
+        
+            <h3>TYPING SPEED TEST</h3>
+        
+    </header>
+    <div class="page">
+        <h1>Test your typing skills</h1>
+        
+        <div class="test stop">
+            
+            <div class="counters">
+                <div class="timer  counter" id="timer">
+                    <div class="sec-count">60</div>
+                    <svg>
+                        <circle cx="50%" cy="50%" r="43" stroke="orange" fill="transparent" stroke-width="5">
+
+                        </circle>
+                    </svg>
+                    <div class="counter-label"> seconds</div>
+                   
+                </div>
+                
+
+
+                <div class="words counter"> <span> 0</span><div class="counter-label"> words/min</div></div>
+                <div class="chars counter">  <span> 0</span><div class="counter-label"> chars/min</div></div>
+                <div class="accuracy counter">  <span> 0</span><div class="counter-label">% accuracy</div></div>
+            </div>
+           
+            <div  class="box">
+                        
+                    <div class="user-input" >
+                        <div class="entered">
+                         
+
+                        </div>
+                        
+                        <span   class="current-word"  spellcheck="false" autocorrect="off"  autocapitalize="off" autocomplete="off"  contenteditable="false"></span>
+                    </div>
+                    <div class="test-text" >
+                       
+                    </div>
+             </div>
+
+
+
+        </div>
+
+    </div>
+    <div class="result">
+        <img src="" alt="">
+        <div class="text">
+            <h2>You're a <span class="trophy"></span> </h2>
+            <p> Well... You type with the speed of <span class="wpm"></span>WPM (<span class="cpm"></span>CPM). Your accuracy was <span class="acc"></span>%.  It could be better! </p>
+        </div>
+        <div class="share">
+            <p>Share your score</p>
+            <div class="social-icons"></div>
+            <img src="facebook.png" alt="">
+            <img src="linkedin.png" alt="">
+            <img src="twitter.png" alt="">
+            
+            
+
+        </div>
+        <div class="footer">
+            <button class="try-again">Try again</button>
+        </div>
+    </div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.9.0/axios.min.js" integrity="sha512-FPlUpimug7gt7Hn7swE8N2pHw/+oQMq/+R/hH/2hZ43VOQ+Kjh25rQzuLyPz7aUWKlRpI7wXbY6+U3oFPGjPOA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="app.js"></script>
+    
+
+</body>
+
+</html>

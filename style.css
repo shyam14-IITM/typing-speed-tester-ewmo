@@ -1,0 +1,390 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  
+   font-family: "Lato", sans-serif;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+
+}
+
+header {
+    height: 60px;
+    background-color: #3d3d3d;
+    width: 100%;
+    border-bottom: 2px solid orange;
+    color: orange;
+    
+    
+    
+
+}
+
+header h3 {
+    padding:10px;
+    font-size: 30px;
+    font-weight: bold;
+    /* color:white; */
+    letter-spacing: 5px;
+    word-spacing: 10px;
+}
+
+.page {
+    width: 100%;
+    height: calc(100vh - 60px);
+    background-color: aliceblue;
+    background-color: #111;
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+
+}
+.page.blur{
+    filter: brightness(0.3);
+}
+.page h1 {
+    margin: 150px 0px 0px 0px;
+    font-size: clamp(40px, 8vw, 70px);
+    text-align: center;
+    text-shadow: 0px 0px 2px  wheat;
+    color:#111;
+}
+
+.test {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    ;
+}
+
+.test.stop::after {
+    content: "Start typing";
+    text-align: center;
+    font-size: 16px;
+    padding: 5px;
+    padding-top: 5px;
+    position: absolute;
+    top: 62%;
+    left: 45%;
+    transform: translateX(0);
+    z-index: 10;
+
+    height: 30px;
+    width: 90px;
+    background-color: rgb(255, 200, 62);
+
+    clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 55% 80%, 50% 100%, 45% 80%, 0% 80%);
+    animation: bounce 1s linear 0s infinite;
+    animation-direction: alternate;
+
+}
+
+@keyframes bounce {
+    from {
+        transform: translateY(-40%);
+    }
+
+    to {
+        transform: translateY(40%);
+    }
+}
+
+.test .counters {
+
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin: 50px 20px;
+   
+}
+
+.test .counters .counter {
+    height: 90px;
+    width: 90px;
+    font-size: 45px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid yellow; */
+    position: relative;
+    border-radius: 15px;
+    color:white;
+    background-color: #111;
+    border: 2px solid orange;
+
+}
+
+.counter span {
+    font-weight: 900;
+}
+
+.test .box {
+    padding: 0px;
+    margin-top: 50px;
+    height: 120px;
+    font-size: 30px;
+    font-weight: 350;
+    text-wrap: nowrap;
+    width: 90vw;
+    max-width: 1536px;
+    overflow-x: hidden;
+    background-color: white;
+    display: flex;
+    overflow-y: visible;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0 0px 10px rgba(128, 128, 128, 0.541);
+    /* align-items: center; */
+    background-color: #111;
+
+}
+
+
+.box>div {
+    width: 50%;
+    height: 100%;
+    /* border:1px solid black; */
+    padding-top: 30px;
+    font-size: 40px;
+    color:white;
+
+}
+
+.box div span {
+    margin-right: 10px;
+   
+
+}
+
+.box .user-input {
+    position: relative;
+    display: flex;
+    padding-top: 0;
+    padding-bottom: 5px;
+    text-align: right;
+    justify-content: right;
+    align-items: center;
+    font-weight: 300;
+    /* overflow-x: auto; */
+     
+    /* overflow: hidden; */
+
+}
+
+.user-input .entered {
+    /* margin-left: auto; */
+    /* margin-right: auto; */
+    border: none;
+    /* padding-top: ; */
+    margin-bottom: 2px;
+    padding-bottom: 5px;
+    text-overflow: clip;
+    min-width: 50%;
+    text-align: right;
+    direction: rtl;
+    
+
+}
+
+.entered span {
+    margin-right: 0px;
+    color: rgba(232, 228, 228, 0.23);
+    
+}
+
+.user-input .current-word {
+    text-align: right;
+    color: orange;
+
+    margin-bottom: 6px;
+        margin-right: 0.1px;
+  
+
+    outline: none;
+}
+
+.wrong-word {
+    text-decoration: line-through;
+    color: grey;
+}
+
+@media(max-width:645px) {
+    .test .counters .counter {
+        height: 70px;
+        width: 70px;
+    }
+
+    .counters #timer {
+        margin-right: 40px;
+    }
+}
+
+.counters #timer {
+    margin-right: 80px;
+    border-radius: 50%;
+    border: 3px solid white;
+    font-weight: 900;
+    /* background: linear-gradient(to bottom,black 50%,transparent); */
+}
+
+#timer svg {
+    position: absolute;
+}
+
+#timer svg circle {
+    stroke-width: 5;
+    --length: 2.83px;
+    stroke-dasharray: calc(var(--length)*100) calc(var(--length)*0);
+    stroke-dashoffset: 78;
+    /* animation: timer 60s ; */
+    /* transition: stroke-dasharray 0.5s; */
+
+}
+
+.counter .counter-label {
+    position: absolute;
+    bottom: -25px;
+    font-size: 15px;
+    color: grey;
+}
+
+
+
+.result {
+    height: 70vh;
+
+    /* width:50vw; */
+    min-width: min(600px, 100vw);
+    background-color: #222;
+    color:white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 15px;
+    padding: 40px 25px;
+    display: none;
+    flex-direction: column;
+    gap: 20px;
+    align-items: ;
+
+
+}
+
+.result>img {
+    height: 50%;
+    width: 60%;
+    align-self: center;
+
+}
+
+.result h2 {
+    font-size: 25px;
+    font-weight: 800;
+
+}
+
+.result .text p {
+    margin-top: 10px;
+
+}
+
+.result .share p {
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.result .share img {
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: transform 0.3s;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+.result .try-again {
+    padding: 8px;
+    border-radius: 5px;
+    color: orange;
+    background-color:transparent;
+
+    outline: none;
+    border: 1px solid orange;
+    transition: background-color 0.3s, transform 0.1s;
+    cursor: pointer;
+
+    &:active{
+        transform: scale(0.9);
+    }
+    &:hover {
+        color: white;
+        font-weight: 800;
+        background-color: orange;
+    }
+
+}
+
+
+@keyframes timer {
+    from {
+        stroke-dasharray: calc(0*var(--length)) calc(var(--length)*100);
+    }
+
+    to {
+        stroke-dasharray: calc(100*var(--length)) calc(var(--length)*0);
+    }
+}
+
+@media(max-width:645px) {
+    header h3{
+        font-size: 23px;
+        padding-top:10px;
+        word-spacing: 2px;
+        letter-spacing: 2px;
+    }
+
+  .test  .box{
+        height: 90px;
+        font-size: 22px;
+    }
+    .page h1{
+        text-shadow: 0 0 1px rgb(243, 195, 106);
+        color:#222;
+    }
+    .box .test-text{
+        font-size: 22px;
+    }
+    .box .user-input{
+        font-size: 22px;
+        padding-bottom: 0;
+        padding-top:2px;
+    }
+    .test .counters .counter {
+        height: 10vw;
+        width: 10vw;
+        font-size: clamp(15px, 6vw, 35px);
+    }
+
+    .counters #timer {
+        margin-right: 8vw;
+    }
+
+    circle {
+        r: 5vw;
+    }
+}
