@@ -319,6 +319,7 @@ const tryAgain = () => {  // reseting everything to default and getting a new pa
     document.querySelector("#timer .sec-count").innerText = sec;
     document.querySelector("#timer circle").style.animation="none";
     document.querySelector(".words.counter span").innerText = 0;
+    document.querySelector(".chars.counter span").innerText = 0;
     document.querySelector(".accuracy.counter span").innerText = 0;
     document.querySelector(".page").classList.remove("blur")
     getParagraph();
