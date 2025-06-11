@@ -3,6 +3,7 @@ let testWords, testSpans, testString;
  
 getParagraph();                         // to get the paragraph text for testing.
 async function getParagraph() {
+    let text='';
     testTextBox.innerHTML="<span style='opacity:0.3'>Loading paragraph...</span>";
     try {
         let aiResponse = await axios.post('https://api.groq.com/openai/v1/chat/completions', {
@@ -17,26 +18,20 @@ async function getParagraph() {
             }
         })
 
-        let text = aiResponse.data.choices[0].message.content // main text of the ai response
-        testTextBox.innerText = text;
-        currWord.setAttribute("contenteditable", "true")
-
-        testWords = testTextBox.innerText.split(" ");
-
-        testString = testTextBox.innerText;
-        toSpans(".test-text");
-
-        testSpans = document.querySelectorAll(".test-text span");
+         text = aiResponse.data.choices[0].message.content // main text of the ai response
+       
 
     } catch (e) {
         console.log(e);
-        let text = "Technology has significantly transformed modern education, reshaping how students learn and how educators teach. With the rise of digital platforms, access to information has become easier and faster than ever before. Online courses, educational apps, and virtual classrooms have expanded learning beyond traditional boundaries, enabling students to gain knowledge at their own pace and from virtually anywhere in the world. Interactive tools like videos, simulations, and quizzes help make complex topics more engaging and easier to understand. Teachers, too, benefit from technology through tools that help track student performance, create customized lesson plans, and provide instant feedback. Additionally, artificial intelligence and machine learning are beginning to personalize learning experiences, identifying areas where students struggle and offering targeted help. However, while technology offers numerous advantages, it also raises concerns about screen time, reduced face-to-face interaction, and unequal access to resources in underprivileged areas. Digital literacy has become essential not just for students, but also for educators who must stay updated with new tools and platforms. Ultimately, when used effectively, technology can bridge gaps in education, foster collaboration, and promote a more inclusive and innovative learning environment for all. It is redefining the classroom experience in ways we are only beginning to fully understand."
+        text = "Technology has significantly transformed modern education, reshaping how students learn and how educators teach. With the rise of digital platforms, access to information has become easier and faster than ever before. Online courses, educational apps, and virtual classrooms have expanded learning beyond traditional boundaries, enabling students to gain knowledge at their own pace and from virtually anywhere in the world. Interactive tools like videos, simulations, and quizzes help make complex topics more engaging and easier to understand. Teachers, too, benefit from technology through tools that help track student performance, create customized lesson plans, and provide instant feedback. Additionally, artificial intelligence and machine learning are beginning to personalize learning experiences, identifying areas where students struggle and offering targeted help. However, while technology offers numerous advantages, it also raises concerns about screen time, reduced face-to-face interaction, and unequal access to resources in underprivileged areas. Digital literacy has become essential not just for students, but also for educators who must stay updated with new tools and platforms. Ultimately, when used effectively, technology can bridge gaps in education, foster collaboration, and promote a more inclusive and innovative learning environment for all. It is redefining the classroom experience in ways we are only beginning to fully understand."
+       
+    }
         testTextBox.innerText = text;
         currWord.setAttribute("contenteditable","true");
         testWords = testTextBox.innerText.split(" ");
         testString = testTextBox.innerText;
         toSpans(".test-text");
-    }
+        testSpans = document.querySelectorAll(".test-text span");
 }
 
 
@@ -56,7 +51,7 @@ const toSpans = (selector) => { // breaking a text into spans for functionality
         newStr = newStr + `<span>${el}</span>`;
     })
     box.innerHTML = newStr;
-    // console.log("split done for", selector)
+    
 }
 
 
